@@ -12,9 +12,41 @@ namespace RoboticParkingSystem
 {
     public partial class Form1 : Form
     {
+        string username = "Merima";
+        string password = "user";
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            if (nametxt.Text==username)
+            {
+                if (lozinkatxt.Text == password)
+                {
+                    new Form2().Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Unešeni netačni podaci.");
+            }
+        }
+
+        private void registracija_Click(object sender, EventArgs e)
+        {
+            username = nametxt.Text;
+            password = lozinkatxt.Text;
+            MessageBox.Show("Uspješna registracija.");
         }
     }
 }
