@@ -48,5 +48,21 @@ namespace RoboticParkingSystem
             password = lozinkatxt.Text;
             MessageBox.Show("Uspješna registracija.");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            nametxt.Text = "Korisničko ime";
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

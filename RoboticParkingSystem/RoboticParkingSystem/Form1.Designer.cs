@@ -28,113 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.name = new System.Windows.Forms.Label();
-            this.pasvord = new System.Windows.Forms.Label();
             this.nametxt = new System.Windows.Forms.TextBox();
             this.lozinkatxt = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
-            this.registracija = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(571, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // name
-            // 
-            this.name.AutoSize = true;
-            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.name.Location = new System.Drawing.Point(32, 49);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(111, 29);
-            this.name.TabIndex = 1;
-            this.name.Text = "Korisnik:";
-            this.name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.name.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pasvord
-            // 
-            this.pasvord.AutoSize = true;
-            this.pasvord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pasvord.Location = new System.Drawing.Point(38, 96);
-            this.pasvord.Name = "pasvord";
-            this.pasvord.Size = new System.Drawing.Size(108, 29);
-            this.pasvord.TabIndex = 2;
-            this.pasvord.Text = "Lozinka:";
             // 
             // nametxt
             // 
-            this.nametxt.Location = new System.Drawing.Point(189, 57);
+            this.nametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nametxt.Location = new System.Drawing.Point(85, 85);
+            this.nametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(234, 22);
+            this.nametxt.Size = new System.Drawing.Size(203, 26);
             this.nametxt.TabIndex = 3;
             this.nametxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lozinkatxt
             // 
-            this.lozinkatxt.Location = new System.Drawing.Point(189, 103);
+            this.lozinkatxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lozinkatxt.Location = new System.Drawing.Point(85, 127);
+            this.lozinkatxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lozinkatxt.Name = "lozinkatxt";
-            this.lozinkatxt.Size = new System.Drawing.Size(234, 22);
+            this.lozinkatxt.Size = new System.Drawing.Size(203, 26);
             this.lozinkatxt.TabIndex = 4;
             // 
             // login
             // 
-            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.login.Location = new System.Drawing.Point(304, 159);
+            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.login.Location = new System.Drawing.Point(235, 180);
+            this.login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(119, 41);
+            this.login.Size = new System.Drawing.Size(89, 33);
             this.login.TabIndex = 5;
             this.login.Text = "Prijava";
             this.login.UseVisualStyleBackColor = true;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
-            // registracija
+            // groupBox1
             // 
-            this.registracija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.registracija.Location = new System.Drawing.Point(189, 159);
-            this.registracija.Name = "registracija";
-            this.registracija.Size = new System.Drawing.Size(109, 41);
-            this.registracija.TabIndex = 6;
-            this.registracija.Text = "Registracija";
-            this.registracija.UseVisualStyleBackColor = true;
-            this.registracija.Click += new System.EventHandler(this.registracija_Click);
+            this.groupBox1.Controls.Add(this.nametxt);
+            this.groupBox1.Controls.Add(this.login);
+            this.groupBox1.Controls.Add(this.lozinkatxt);
+            this.groupBox1.Location = new System.Drawing.Point(242, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 233);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Prijava korisnika";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RoboticParkingSystem.Properties.Resources.ikona_login;
+            this.pictureBox2.Location = new System.Drawing.Point(398, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.pictureBox1.Image = global::RoboticParkingSystem.Properties.Resources.ikona;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(181, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(571, 345);
-            this.Controls.Add(this.registracija);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.lozinkatxt);
-            this.Controls.Add(this.nametxt);
-            this.Controls.Add(this.pasvord);
-            this.Controls.Add(this.name);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(632, 361);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Label name;
-        private System.Windows.Forms.Label pasvord;
         private System.Windows.Forms.TextBox nametxt;
         private System.Windows.Forms.TextBox lozinkatxt;
         private System.Windows.Forms.Button login;
-        private System.Windows.Forms.Button registracija;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
