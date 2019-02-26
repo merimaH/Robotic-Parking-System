@@ -31,10 +31,10 @@
             this.nametxt = new System.Windows.Forms.TextBox();
             this.lozinkatxt = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,8 +42,8 @@
             // nametxt
             // 
             this.nametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nametxt.Location = new System.Drawing.Point(85, 85);
-            this.nametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nametxt.Location = new System.Drawing.Point(324, 160);
+            this.nametxt.Margin = new System.Windows.Forms.Padding(2);
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(203, 26);
             this.nametxt.TabIndex = 3;
@@ -52,8 +52,8 @@
             // lozinkatxt
             // 
             this.lozinkatxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lozinkatxt.Location = new System.Drawing.Point(85, 127);
-            this.lozinkatxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lozinkatxt.Location = new System.Drawing.Point(324, 210);
+            this.lozinkatxt.Margin = new System.Windows.Forms.Padding(2);
             this.lozinkatxt.Name = "lozinkatxt";
             this.lozinkatxt.Size = new System.Drawing.Size(203, 26);
             this.lozinkatxt.TabIndex = 4;
@@ -61,8 +61,8 @@
             // login
             // 
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.login.Location = new System.Drawing.Point(235, 180);
-            this.login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.login.Location = new System.Drawing.Point(490, 269);
+            this.login.Margin = new System.Windows.Forms.Padding(2);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(89, 33);
             this.login.TabIndex = 5;
@@ -70,23 +70,10 @@
             this.login.UseVisualStyleBackColor = true;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.nametxt);
-            this.groupBox1.Controls.Add(this.login);
-            this.groupBox1.Controls.Add(this.lozinkatxt);
-            this.groupBox1.Location = new System.Drawing.Point(242, 69);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 233);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Prijava korisnika";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::RoboticParkingSystem.Properties.Resources.ikona_login;
-            this.pictureBox2.Location = new System.Drawing.Point(398, 35);
+            this.pictureBox2.Location = new System.Drawing.Point(385, 45);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 60);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,24 +92,45 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(321, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Korisničko ime:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(321, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Šifra:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(632, 361);
+            this.ClientSize = new System.Drawing.Size(619, 361);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nametxt);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.login);
+            this.Controls.Add(this.lozinkatxt);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Prijava";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,8 +139,9 @@
         private System.Windows.Forms.TextBox lozinkatxt;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
