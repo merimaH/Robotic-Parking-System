@@ -16,5 +16,13 @@ namespace RoboticParkingSystem
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form5 forma = new Form5();
+            forma.Show();
+            this.Hide();
+
+        }
     }
 }

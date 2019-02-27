@@ -12,7 +12,7 @@ namespace RoboticParkingSystem
 {
     public partial class Form1 : Form
     {
-        string username = "Merima";
+        string username = "merima";
         string password = "user";
         public Form1()
         {
@@ -31,14 +31,18 @@ namespace RoboticParkingSystem
 
         private void login_Click(object sender, EventArgs e)
         {
-            if (nametxt.Text==username)
+            // ako je supervizor
+            if (nametxt.Text!=username || lozinkatxt.Text != password)
             {
-                if (lozinkatxt.Text == password)
-                {
-                    new Form2().Show();
-                    this.Hide();
-                }
-                else MessageBox.Show("Unešeni netačni podaci.");
+                errorProvider1.SetError(nametxt, "Netačni podaci");
+                errorProvider1.SetError(lozinkatxt, "Netačni podaci");
+
+            }
+            else
+            {
+                new Form4().Show();
+                this.Hide();
+
             }
         }
 
@@ -51,7 +55,7 @@ namespace RoboticParkingSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            nametxt.Text = "Korisničko ime";
+            
 
         }
 

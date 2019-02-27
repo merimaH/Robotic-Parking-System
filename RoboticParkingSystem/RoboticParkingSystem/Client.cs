@@ -12,9 +12,24 @@ namespace RoboticParkingSystem
         private String lasteName;
         private String adress;
         private Image fingerprint;
+        private String registracija;
         private Payment payment;
-        private int pinCode;
+        private String vozacka;
+        public String Registracija
+        {
+            get { return registracija; }
+            set { registracija = value; }
+        }
 
+        public String  Vozacka
+        {
+            get { return vozacka; }
+            set { vozacka = value; }
+        }
+
+        
+        private int pinCode;
+        
         public int PinCode
         {
             get { return pinCode; }
@@ -47,13 +62,25 @@ namespace RoboticParkingSystem
             get { return lasteName; }
             set { lasteName = value; }
         }
-        public Client(String firstName,String lastName,String adress,Image fingerprint,Payment payment)
+        public Client(String firstName,String lastName,String adress,Image fingerprint,String registracija, String vozacka,Payment payment)
         {
             this.firstName = firstName;
             this.lasteName = lastName;
             this.adress = adress;
             this.fingerprint = fingerprint;
+            this.registracija = registracija;
+            this.vozacka = vozacka;
             this.payment = payment;
+        }
+        public Client(String firstName, String lastName, String adress, Image fingerprint, String registracija, String vozacka)
+        {
+            this.firstName = firstName;
+            this.lasteName = lastName;
+            this.adress = adress;
+            this.fingerprint = fingerprint;
+            this.registracija = registracija;
+            this.vozacka = vozacka;
+            this.payment = null;
         }
 
 
