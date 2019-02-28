@@ -21,7 +21,7 @@ namespace RoboticParkingSystem
         {
             Form5 forma = new Form5();
             forma.Show();
-            this.Hide();
+            //this.Hide();
 
         }
     }
