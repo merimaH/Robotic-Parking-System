@@ -82,7 +82,7 @@ namespace RoboticParkingSystem
                 errorProvider1.SetError(textBox4, "Morate unijeti adresu.");
             else
                 errorProvider1.SetError(textBox4, "");
-
+            // treba postaviti da je inicijalno null
             if (pictureBox1.Image == null)
                 errorProvider1.SetError(button1, "Potreban je otisak prsta");
             else

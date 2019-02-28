@@ -61,6 +61,9 @@
             this.lozinkatxt.PasswordChar = '*';
             this.lozinkatxt.Size = new System.Drawing.Size(203, 26);
             this.lozinkatxt.TabIndex = 4;
+            this.lozinkatxt.Enter += new System.EventHandler(this.lozinkatxt_Enter);
+            this.lozinkatxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lozinkatxt_KeyDown);
+            this.lozinkatxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lozinkatxt_KeyPress);
             // 
             // login
             // 
@@ -116,6 +119,7 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
             // Form1

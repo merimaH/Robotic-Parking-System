@@ -36,7 +36,9 @@ namespace RoboticParkingSystem
             {
                 errorProvider1.SetError(nametxt, "Netačni podaci");
                 errorProvider1.SetError(lozinkatxt, "Netačni podaci");
-
+                //nametxt.Focus();
+                nametxt.Select(); // selektuje tekst da se lakse promijeni posto je pogresan
+                nametxt.SelectAll();
             }
             else
             {
@@ -67,6 +69,24 @@ namespace RoboticParkingSystem
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lozinkatxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void lozinkatxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            // za provjeru jel pritisnut enter 
+            if (e.KeyCode == Keys.Enter)
+                login_Click(this, e);
+                
+        }
+
+        private void lozinkatxt_Enter(object sender, EventArgs e)
+        {
+            lozinkatxt.SelectAll();
         }
     }
 }
