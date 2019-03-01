@@ -10,7 +10,13 @@ namespace RoboticParkingSystem
     {
         private DateTime dateOfPayment;
         private int numberPaidMonths;
+        private int idClient;
 
+        public int IdClient
+        {
+            get { return idClient; }
+            set { idClient = value; }
+        }
         public DateTime DateOfPayment
         {
             get { return dateOfPayment; }
@@ -22,6 +28,11 @@ namespace RoboticParkingSystem
             get { return numberPaidMonths; }
             set { numberPaidMonths = value; }
         }
+        public DateTime ValidUntil
+        {
+            get { return dateOfPayment.AddMonths(numberPaidMonths); }
+        }
+
         
     }
 }
