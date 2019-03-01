@@ -8,6 +8,8 @@ namespace RoboticParkingSystem
 {
     class Client
     {
+        private static int brojKlijenata = 0;
+        
         private String firstName;
         private String lasteName;
         private String adress;
@@ -15,6 +17,14 @@ namespace RoboticParkingSystem
         private String registracija;
         private Payment payment;
         private String vozacka;
+        private int id; // id za uparivanje sa paymentima
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         public String Registracija
         {
             get { return registracija; }
@@ -64,6 +74,8 @@ namespace RoboticParkingSystem
         }
         public Client(String firstName,String lastName,String adress,Image fingerprint,String registracija, String vozacka,Payment payment)
         {
+            Client.brojKlijenata += 1;
+            this.id = Client.brojKlijenata;
             this.firstName = firstName;
             this.lasteName = lastName;
             this.adress = adress;
@@ -74,6 +86,8 @@ namespace RoboticParkingSystem
         }
         public Client(String firstName, String lastName, String adress, Image fingerprint, String registracija, String vozacka)
         {
+            Client.brojKlijenata += 1;
+            this.id = Client.brojKlijenata;
             this.firstName = firstName;
             this.lasteName = lastName;
             this.adress = adress;
