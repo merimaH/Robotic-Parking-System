@@ -105,6 +105,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Dodaj uplatu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form4
             // 
