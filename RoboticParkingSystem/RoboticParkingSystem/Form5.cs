@@ -125,6 +125,14 @@ namespace RoboticParkingSystem
                 errorProvider1.SetError(textBox1, "");
             if (flag_validno)
             {
+                Image img = pictureBox1.Image;
+                byte[] arr;
+                ImageConverter converter = new ImageConverter();
+                arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
+                string sqlCommand = "INSERT INTO Klijenti VALUES('"+ime+"','"+prezime+"', '"+adresa+"', '"+registracija+ "', '"+vozacka+ "', '"+arr + "');";
+                Program.izvrsiSql(sqlCommand);
+
+
                 Klijenti_lista.data.Add(new Client(ime, prezime, adresa, pictureBox1.Image, registracija, vozacka));
                 DialogResult result = MessageBox.Show("Korisnik uspješno dodan!", "Akcija uspješna", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();

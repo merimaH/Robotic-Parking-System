@@ -150,6 +150,12 @@
     <Compile Include="pocetna.Designer.cs">
       <DependentUpon>pocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="prikazUplata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prikazUplata.Designer.cs">
+      <DependentUpon>prikazUplata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pocetna.resx">
       <DependentUpon>pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prikazUplata.resx">
+      <DependentUpon>prikazUplata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,10 +269,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database2.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database2_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
   </ItemGroup>

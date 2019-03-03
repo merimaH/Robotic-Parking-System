@@ -48,6 +48,7 @@ namespace RoboticParkingSystem
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
                     dataGridView1.MultiSelect = false; // da se može samo jedan selektovati
+                    dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 }
             }
 
@@ -77,7 +78,7 @@ namespace RoboticParkingSystem
             if (e.KeyChar== (char)13)
             {
                 DataView dv = dt.DefaultView;
-                dv.RowFilter = string.Format("Ime like '%{0}%'", textBox1.Text);
+                dv.RowFilter = string.Format("Ime like '%{0}%' or Prezime like '%{0}%'", textBox1.Text);
                 dataGridView1.DataSource = dv.ToTable();
             }
         }
@@ -96,6 +97,51 @@ namespace RoboticParkingSystem
                 label3.Visible = true;
                 numericUpDown1.Visible = true;
             }
+            else
+            {
+                label3.Visible = false;
+                numericUpDown1.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection redovi = dataGridView1.SelectedRows;
+            if (redovi.Count == 0)
+                errorProvider1.SetError(dataGridView1, "Morate selektovati klijenta");
+            else
+            {
+                DataGridViewRow red = redovi[0];
+                int id = int.Parse(red.Cells[0].Value.ToString());
+                Program.brojacUplata += 1;
+                int brojMjeseci = 1;
+                if (checkBox1.Checked == true)
+                    brojMjeseci = Convert.ToInt32(numericUpDown1.Value);
+                string sqlFormattedDate = dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                string sqlNaredba = string.Format("INSERT INTO Uplate VALUES ({0}, '{1}',{2});",  brojMjeseci, sqlFormattedDate, id);
+                using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+                {
+                    if (cn.State == ConnectionState.Closed)
+                    {
+                        cn.Open();
+                    }
+                    SqlCommand sqlCommand = new SqlCommand(sqlNaredba, cn);
+                    //sqlCommand.BeginExecuteNonQuery();
+                    sqlCommand.ExecuteNonQuery();
+
+                    //SqlDataAdapter da = new SqlDataAdapter(sqlNaredba, cn);
+                    
+                }
+            }
+            new prikazUplata().Show();
+            //textBox1.Text = id.ToString();
+
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
