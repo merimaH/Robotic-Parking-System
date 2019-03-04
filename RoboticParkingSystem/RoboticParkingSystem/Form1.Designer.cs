@@ -67,14 +67,17 @@
             // 
             // login
             // 
+            this.login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.login.Location = new System.Drawing.Point(490, 269);
+            this.login.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.login.Location = new System.Drawing.Point(470, 274);
             this.login.Margin = new System.Windows.Forms.Padding(2);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(89, 33);
+            this.login.Size = new System.Drawing.Size(88, 28);
             this.login.TabIndex = 5;
             this.login.Text = "Prijava";
-            this.login.UseVisualStyleBackColor = true;
+            this.login.UseVisualStyleBackColor = false;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // label1
