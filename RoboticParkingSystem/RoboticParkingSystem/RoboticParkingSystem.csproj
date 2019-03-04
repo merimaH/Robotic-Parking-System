@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database2DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database2DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database2DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +237,17 @@
     </None>
     <None Include="Database2DataSet1.xss">
       <DependentUpon>Database2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Database2DataSet2.xsc">
+      <DependentUpon>Database2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Database2DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database2DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database2DataSet2.xss">
+      <DependentUpon>Database2DataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
