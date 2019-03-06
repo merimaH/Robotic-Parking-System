@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,20 +42,21 @@
             this.klijentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.klijentiTableAdapter = new RoboticParkingSystem.Database2DataSet2TableAdapters.KlijentiTableAdapter();
             this.tableAdapterManager = new RoboticParkingSystem.Database2DataSet2TableAdapters.TableAdapterManager();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registracijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vozackaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otisakPrstaDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -67,17 +67,6 @@
             this.splitter1.Size = new System.Drawing.Size(159, 450);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.pictureBox1.Image = global::RoboticParkingSystem.Properties.Resources.ikona;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -138,11 +127,16 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(155, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 450);
+            this.panel1.Size = new System.Drawing.Size(698, 450);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // database2DataSet
             // 
@@ -158,22 +152,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientIDDataGridViewTextBoxColumn,
-            this.imeDataGridViewTextBoxColumn,
-            this.prezimeDataGridViewTextBoxColumn,
-            this.adresaDataGridViewTextBoxColumn,
-            this.registracijaDataGridViewTextBoxColumn,
-            this.vozackaDataGridViewTextBoxColumn,
-            this.otisakPrstaDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.klijentiBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 269);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // database2DataSet2
             // 
@@ -197,60 +182,61 @@
             this.tableAdapterManager.UpdateOrder = RoboticParkingSystem.Database2DataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UplateTableAdapter = null;
             // 
-            // clientIDDataGridViewTextBoxColumn
+            // label1
             // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.label1.Location = new System.Drawing.Point(29, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Korisnici";
             // 
-            // imeDataGridViewTextBoxColumn
+            // pictureBox2
             // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pictureBox2.Image = global::RoboticParkingSystem.Properties.Resources.newuser;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 90);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
-            // prezimeDataGridViewTextBoxColumn
+            // pictureBox1
             // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.pictureBox1.Image = global::RoboticParkingSystem.Properties.Resources.ikona;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // adresaDataGridViewTextBoxColumn
+            // pictureBox3
             // 
-            this.adresaDataGridViewTextBoxColumn.DataPropertyName = "Adresa";
-            this.adresaDataGridViewTextBoxColumn.HeaderText = "Adresa";
-            this.adresaDataGridViewTextBoxColumn.Name = "adresaDataGridViewTextBoxColumn";
-            this.adresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pictureBox3.Image = global::RoboticParkingSystem.Properties.Resources.newuser;
+            this.pictureBox3.Location = new System.Drawing.Point(10, 112);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
-            // registracijaDataGridViewTextBoxColumn
+            // dataGridView2
             // 
-            this.registracijaDataGridViewTextBoxColumn.DataPropertyName = "Registracija";
-            this.registracijaDataGridViewTextBoxColumn.HeaderText = "Registracija";
-            this.registracijaDataGridViewTextBoxColumn.Name = "registracijaDataGridViewTextBoxColumn";
-            this.registracijaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vozackaDataGridViewTextBoxColumn
-            // 
-            this.vozackaDataGridViewTextBoxColumn.DataPropertyName = "Vozacka";
-            this.vozackaDataGridViewTextBoxColumn.HeaderText = "Vozacka";
-            this.vozackaDataGridViewTextBoxColumn.Name = "vozackaDataGridViewTextBoxColumn";
-            this.vozackaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // otisakPrstaDataGridViewImageColumn
-            // 
-            this.otisakPrstaDataGridViewImageColumn.DataPropertyName = "OtisakPrsta";
-            this.otisakPrstaDataGridViewImageColumn.HeaderText = "OtisakPrsta";
-            this.otisakPrstaDataGridViewImageColumn.Name = "otisakPrstaDataGridViewImageColumn";
-            this.otisakPrstaDataGridViewImageColumn.ReadOnly = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(136, 246);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 4;
             // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 450);
+            this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -262,13 +248,17 @@
             this.Name = "Form6";
             this.Text = "Form6";
             this.Load += new System.EventHandler(this.Form6_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,12 +279,9 @@
         private System.Windows.Forms.BindingSource klijentiBindingSource;
         private Database2DataSet2TableAdapters.KlijentiTableAdapter klijentiTableAdapter;
         private Database2DataSet2TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registracijaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vozackaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn otisakPrstaDataGridViewImageColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

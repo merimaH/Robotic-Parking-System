@@ -300,9 +300,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\auto11.png" />
-    <None Include="Resources\auto1.png" />
-    <None Include="Resources\auto.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
