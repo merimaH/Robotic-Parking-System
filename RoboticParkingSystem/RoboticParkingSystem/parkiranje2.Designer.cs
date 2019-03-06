@@ -60,7 +60,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(635, 493);
+            this.ClientSize = new System.Drawing.Size(616, 493);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "parkiranje2";
