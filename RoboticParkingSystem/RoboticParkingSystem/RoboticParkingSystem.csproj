@@ -81,6 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database2DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Displej.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Displej.Designer.cs">
+      <DependentUpon>Displej.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Displej.resx">
+      <DependentUpon>Displej.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,7 +300,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\newuser.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
