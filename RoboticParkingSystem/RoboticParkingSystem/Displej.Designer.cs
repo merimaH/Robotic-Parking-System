@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.napustiautomobil = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,18 +125,31 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(333, 525);
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.textBox1.Location = new System.Drawing.Point(26, 482);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 22);
+            this.textBox1.Size = new System.Drawing.Size(299, 38);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Uspjesno ste parkirali!!";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // napustiautomobil
+            // 
+            this.napustiautomobil.BackColor = System.Drawing.Color.Cyan;
+            this.napustiautomobil.Location = new System.Drawing.Point(605, 465);
+            this.napustiautomobil.Name = "napustiautomobil";
+            this.napustiautomobil.Size = new System.Drawing.Size(162, 82);
+            this.napustiautomobil.TabIndex = 6;
+            this.napustiautomobil.Text = "Napustite automobil!";
+            this.napustiautomobil.UseVisualStyleBackColor = false;
             // 
             // Displej
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 577);
+            this.Controls.Add(this.napustiautomobil);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.nazad);
             this.Controls.Add(this.lijevo);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button napustiautomobil;
     }
 }

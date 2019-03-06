@@ -15,6 +15,8 @@ namespace RoboticParkingSystem
         PictureBox auto = new PictureBox();
         TextBox kraj = new TextBox();
         Button lijevodugme = new Button();
+        Button desnodugme = new Button();
+        Button poruka = new Button();
 
 
 
@@ -23,6 +25,8 @@ namespace RoboticParkingSystem
             InitializeComponent();
             kraj = this.textBox1;
             kraj.Visible = false;
+            poruka = this.napustiautomobil;
+            poruka.Visible = false;
 
         }
 
@@ -54,11 +58,13 @@ namespace RoboticParkingSystem
                 //poruka
             }
             lijevodugme = this.lijevo;
+            desnodugme = this.desno;
             //provjera jel u zelenom
             if (auto.Location.X < 38)
             {
                 //vidljiv
                 lijevodugme.BackColor = Color.Red;
+                desnodugme.BackColor = Color.LawnGreen;
 
             }
             //else
@@ -69,10 +75,12 @@ namespace RoboticParkingSystem
             if (auto.Location.X > 38 && auto.Location.X < 68 )
             {
                 kraj.Visible = true;
+                poruka.Visible = true;
             }
             else
             {
                 kraj.Visible = false;
+                poruka.Visible = false;
             }
 
 
