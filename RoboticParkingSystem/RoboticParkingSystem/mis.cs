@@ -18,6 +18,12 @@ namespace RoboticParkingSystem
         Button desnodugme = new Button();
         Button poruka = new Button();
         TextBox upute = new TextBox();
+
+        TextBox desno1 = new TextBox();
+        TextBox lijevo1 = new TextBox();
+
+        TextBox napred1 = new TextBox();
+        TextBox nazad1 = new TextBox();
     
         public mis()
         {
@@ -28,6 +34,17 @@ namespace RoboticParkingSystem
             poruka.Visible = false;
             upute = this.textBox2;
             upute.Visible = true;
+            desno1 = this.desno;
+            desno1.Visible = true;
+
+            lijevo1 = this.lijevo;
+            lijevo1.Visible = false;
+
+            napred1 = this.napred;
+            napred1.Visible = true;
+
+            nazad1 = this.nazad;
+            nazad1.Visible = false;
 
         }
       
@@ -54,6 +71,44 @@ namespace RoboticParkingSystem
             if(drag)
             {
                 auto = this.moveObj1;
+
+                if(auto.Location.X<250)
+                {
+                    desno1.Visible = true;
+                }
+                else
+                {
+                    desno1.Visible = false;
+                }
+
+                if (auto.Location.X > 287)
+                {
+                    lijevo1.Visible = true;
+                }
+                else
+                {
+                    lijevo1.Visible = false;
+                }
+
+
+                if (auto.Location.Y < 122)
+                {
+                    nazad1.Visible = true;
+                }
+                else
+                {
+                    nazad1.Visible = false;
+                }
+
+                if (auto.Location.Y > 180)
+                {
+                    napred1.Visible = true;
+                }
+                else
+                {
+                    napred1.Visible = false;
+                }
+
                 if (auto.Location.X > 250 && auto.Location.X < 287 && auto.Location.Y > 122 && auto.Location.Y < 180)
                 {
                     kraj.Visible = true;
@@ -76,6 +131,14 @@ namespace RoboticParkingSystem
         private void moveObj1_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
+        }
+
+        private void mis_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics l = e.Graphics;
+            Pen p = new Pen(Color.MediumVioletRed, 10);
+            l.DrawLine(p, 250, 250, 100, 100);
+            l.Dispose();
         }
     }
 }

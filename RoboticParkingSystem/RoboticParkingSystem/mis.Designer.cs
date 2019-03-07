@@ -34,9 +34,14 @@
             this.moveObj1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.desno = new System.Windows.Forms.TextBox();
+            this.lijevo = new System.Windows.Forms.TextBox();
+            this.napred = new System.Windows.Forms.TextBox();
+            this.nazad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -112,26 +117,6 @@
             this.panel2.Size = new System.Drawing.Size(244, 276);
             this.panel2.TabIndex = 5;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.Controls.Add(this.moveObj1);
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.panel3.Location = new System.Drawing.Point(240, -1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(609, 530);
-            this.panel3.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Status parkiranja automobila:";
-            // 
             // textBox2
             // 
             this.textBox2.AllowDrop = true;
@@ -146,6 +131,78 @@
             this.textBox2.Text = "Potrebno je pazljivo pozicionirati automobil na oznacenu lokaciju";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Status parkiranja automobila:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.Controls.Add(this.nazad);
+            this.panel3.Controls.Add(this.napred);
+            this.panel3.Controls.Add(this.lijevo);
+            this.panel3.Controls.Add(this.desno);
+            this.panel3.Controls.Add(this.moveObj1);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.panel3.Location = new System.Drawing.Point(258, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(579, 504);
+            this.panel3.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.Location = new System.Drawing.Point(240, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(608, 530);
+            this.panel4.TabIndex = 4;
+            // 
+            // desno
+            // 
+            this.desno.BackColor = System.Drawing.Color.SkyBlue;
+            this.desno.Location = new System.Drawing.Point(453, 249);
+            this.desno.Name = "desno";
+            this.desno.Size = new System.Drawing.Size(99, 30);
+            this.desno.TabIndex = 4;
+            this.desno.Text = "Desno";
+            this.desno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lijevo
+            // 
+            this.lijevo.BackColor = System.Drawing.Color.SkyBlue;
+            this.lijevo.Location = new System.Drawing.Point(62, 252);
+            this.lijevo.Name = "lijevo";
+            this.lijevo.Size = new System.Drawing.Size(99, 30);
+            this.lijevo.TabIndex = 5;
+            this.lijevo.Text = "Lijevo";
+            this.lijevo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // napred
+            // 
+            this.napred.BackColor = System.Drawing.Color.SkyBlue;
+            this.napred.Location = new System.Drawing.Point(273, 43);
+            this.napred.Name = "napred";
+            this.napred.Size = new System.Drawing.Size(99, 30);
+            this.napred.TabIndex = 6;
+            this.napred.Text = "Napred";
+            this.napred.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nazad
+            // 
+            this.nazad.BackColor = System.Drawing.Color.SkyBlue;
+            this.nazad.Location = new System.Drawing.Point(273, 443);
+            this.nazad.Name = "nazad";
+            this.nazad.Size = new System.Drawing.Size(99, 30);
+            this.nazad.TabIndex = 7;
+            this.nazad.Text = "Nazad";
+            this.nazad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // mis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -154,15 +211,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mis";
             this.Text = "mis";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.mis_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +238,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox desno;
+        private System.Windows.Forms.TextBox lijevo;
+        private System.Windows.Forms.TextBox nazad;
+        private System.Windows.Forms.TextBox napred;
     }
 }

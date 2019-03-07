@@ -21,5 +21,13 @@ namespace RoboticParkingSystem
         {
 
         }
+
+        private void parkiranje2_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics l = e.Graphics;
+            Pen p = new Pen(Color.MediumVioletRed, 10);
+            l.DrawLine(p, 250, 250, 100, 100);
+            l.Dispose();
+        }
     }
 }

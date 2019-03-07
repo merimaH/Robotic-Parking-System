@@ -65,6 +65,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "parkiranje2";
             this.Text = "parkiranje2";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.parkiranje2_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
