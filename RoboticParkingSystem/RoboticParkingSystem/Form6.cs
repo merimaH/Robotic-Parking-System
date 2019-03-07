@@ -14,6 +14,7 @@ namespace RoboticParkingSystem
 {
     public partial class Form6 : Form
     {
+        private System.Drawing.Printing.PrintDocument document = new System.Drawing.Printing.PrintDocument();
         public Form6()
         {
             InitializeComponent();
@@ -31,13 +32,13 @@ namespace RoboticParkingSystem
                     cn.Open();
                 }
                 //nesto ne valja sa ovom naredbom
-                string sqlNaredba = "select Klijenti.Ime,Klijenti.Prezime,Klijenti.Adresa,Klijenti.Registracija,Klijenti.Vozacka,Uplate.DatumUplate,datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) as 'Uplata vazi do' from Klijenti inner join Uplate on Uplate.ClientID = Klijenti.ClientID ";
+                string sqlNaredba = "select Klijenti.Ime,Klijenti.Prezime,Klijenti.Adresa,Klijenti.Registracija,Klijenti.Vozacka,datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) as 'Uplata vazi do' from Klijenti inner join Uplate on Uplate.ClientID = Klijenti.ClientID ";
                 string sqlNaredba2 = "where datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) >= GETDATE();";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba+sqlNaredba2, cn))
                 {
 
                     da.Fill(dt);
-                    dataGridView2.DataSource = dt;
+                    dataGridView1.DataSource = dt;
 
                 }
             }
@@ -46,10 +47,27 @@ namespace RoboticParkingSystem
             button1.ForeColor = SystemColors.ControlText;
             button1.Font = new Font("MS Sans Serif", 13);
             panel1.Visible = true;
-            /*DataGridViewRow row1 = dataGridView1.Rows[0];
+            DataGridViewRow row1 = dataGridView1.Rows[0];
             DataGridViewRow row2 = dataGridView1.Rows[1];
             row1.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);
-            row2.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);*/
+            row2.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = true;
+            label2.ForeColor = Color.FromArgb(72, 126, 176);
+            label3.ForeColor = Color.FromArgb(32, 56, 79);
+
+
+            toolTip1.SetToolTip(label2, "Prikaz korisnika sa važećom uplatom.");
+            toolTip1.SetToolTip(label3, "Prikaz svih korisnika.");
+            toolTip1.SetToolTip(pictureBox2, "Novi korisnici.");
+            toolTip1.SetToolTip(pictureBox3, "Novi korisnici.");
+            
+
+
+            button5.ImageList = imageList1;
+            button5.ImageIndex = 0;
+            button5.ImageAlign = ContentAlignment.MiddleLeft;
+            button5.TextAlign = ContentAlignment.MiddleRight;
 
         }
 
@@ -116,11 +134,91 @@ namespace RoboticParkingSystem
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.FromArgb(72, 126, 176);
+            label2.ForeColor = Color.FromArgb(32, 56, 79);
+            DataTable dt = new DataTable("Klijenti");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                //nesto ne valja sa ovom naredbom
+                string sqlNaredba = "select Klijenti.Ime,Klijenti.Prezime,Klijenti.Adresa,Klijenti.Registracija,Klijenti.Vozacka,datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) as 'Uplata vazi do' from Klijenti inner join Uplate on Uplate.ClientID = Klijenti.ClientID;";
+               
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+                }
+            }
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.FromArgb(72, 126, 176);
+            label3.ForeColor = Color.FromArgb(32, 56, 79);
+            DataTable dt = new DataTable("Klijenti");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                //nesto ne valja sa ovom naredbom
+                string sqlNaredba = "select Klijenti.Ime,Klijenti.Prezime,Klijenti.Adresa,Klijenti.Registracija,Klijenti.Vozacka,datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) as 'Uplata vazi do' from Klijenti inner join Uplate on Uplate.ClientID = Klijenti.ClientID ";
+                string sqlNaredba2 = "where datefromparts(year(Uplate.DatumUplate),month(Uplate.DatumUplate)+Uplate.BrojMjeseci,day(Uplate.DatumUplate)) >= GETDATE();";
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba + sqlNaredba2, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+                }
+            }
+        }
+
+        private void label2_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            printDocument1.Print();
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            this.dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+    
         }
     }
 }

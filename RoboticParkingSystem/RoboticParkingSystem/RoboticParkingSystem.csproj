@@ -309,6 +309,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\printIcon2.png" />
+    <None Include="Resources\printIcon.png" />
     <None Include="Resources\ikona1.png" />
   </ItemGroup>
   <ItemGroup>
