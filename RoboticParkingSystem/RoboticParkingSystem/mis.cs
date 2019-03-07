@@ -22,8 +22,18 @@ namespace RoboticParkingSystem
         TextBox desno1 = new TextBox();
         TextBox lijevo1 = new TextBox();
 
-        TextBox napred1 = new TextBox();
+        TextBox napred3 = new TextBox();
         TextBox nazad1 = new TextBox();
+
+        Panel napred2 = new Panel();
+
+        Panel desno2 = new Panel();
+
+        Panel lijevo2 = new Panel();
+
+        Panel nazad2 = new Panel();
+
+        Button napred4 = new Button();
     
         public mis()
         {
@@ -40,11 +50,26 @@ namespace RoboticParkingSystem
             lijevo1 = this.lijevo;
             lijevo1.Visible = false;
 
-            napred1 = this.napred;
-            napred1.Visible = true;
+            napred3 = this.uuu;
+            napred3.Visible = true;
 
             nazad1 = this.nazad;
             nazad1.Visible = false;
+
+            napred2 = this.napredpanel;
+            napred2.Visible = false;
+
+            desno2 = this.desnopanel;
+            desno2.Visible = false;
+
+            lijevo2 = this.lijevopanel;
+            lijevo2.Visible = true;
+
+            nazad2 = this.nazadpanel;
+            nazad2.Visible = true;
+
+            napred4 = this.button2;
+            napred4.Visible = true;
 
         }
       
@@ -75,38 +100,48 @@ namespace RoboticParkingSystem
                 if(auto.Location.X<250)
                 {
                     desno1.Visible = true;
+                    lijevo2.Visible = true;
                 }
                 else
                 {
                     desno1.Visible = false;
+                    lijevo2.Visible = false;
                 }
 
                 if (auto.Location.X > 287)
                 {
                     lijevo1.Visible = true;
+                    desno2.Visible = true;
                 }
                 else
                 {
                     lijevo1.Visible = false;
+                    desno2.Visible = false;
                 }
 
 
                 if (auto.Location.Y < 122)
                 {
                     nazad1.Visible = true;
+                    napred2.Visible = true;
                 }
                 else
                 {
                     nazad1.Visible = false;
+                    napred2.Visible = false;
                 }
 
                 if (auto.Location.Y > 180)
                 {
-                    napred1.Visible = true;
+                    napred3.Visible = true;
+                    nazad2.Visible = true;
+                    napred4.Visible = true;
                 }
                 else
                 {
-                    napred1.Visible = false;
+                    napred3.Visible = false;
+                    nazad2.Visible = false;
+                    napred4.Visible = false;
                 }
 
                 if (auto.Location.X > 250 && auto.Location.X < 287 && auto.Location.Y > 122 && auto.Location.Y < 180)
@@ -139,6 +174,11 @@ namespace RoboticParkingSystem
             Pen p = new Pen(Color.MediumVioletRed, 10);
             l.DrawLine(p, 250, 250, 100, 100);
             l.Dispose();
+        }
+
+        private void napred_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

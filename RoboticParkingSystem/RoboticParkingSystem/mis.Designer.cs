@@ -37,15 +37,21 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.desno = new System.Windows.Forms.TextBox();
-            this.lijevo = new System.Windows.Forms.TextBox();
-            this.napred = new System.Windows.Forms.TextBox();
             this.nazad = new System.Windows.Forms.TextBox();
+            this.nazadpanel = new System.Windows.Forms.Panel();
+            this.lijevo = new System.Windows.Forms.TextBox();
+            this.lijevopanel = new System.Windows.Forms.Panel();
+            this.desno = new System.Windows.Forms.TextBox();
+            this.desnopanel = new System.Windows.Forms.Panel();
+            this.napredpanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.uuu = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.napredpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -83,7 +89,7 @@
             // moveObj1
             // 
             this.moveObj1.Image = global::RoboticParkingSystem.Properties.Resources.auto11;
-            this.moveObj1.Location = new System.Drawing.Point(168, 192);
+            this.moveObj1.Location = new System.Drawing.Point(168, 218);
             this.moveObj1.Margin = new System.Windows.Forms.Padding(4);
             this.moveObj1.Name = "moveObj1";
             this.moveObj1.Size = new System.Drawing.Size(106, 218);
@@ -143,35 +149,38 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.Controls.Add(this.moveObj1);
             this.panel3.Controls.Add(this.nazad);
-            this.panel3.Controls.Add(this.napred);
+            this.panel3.Controls.Add(this.nazadpanel);
             this.panel3.Controls.Add(this.lijevo);
             this.panel3.Controls.Add(this.desno);
-            this.panel3.Controls.Add(this.moveObj1);
             this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.lijevopanel);
+            this.panel3.Controls.Add(this.desnopanel);
+            this.panel3.Controls.Add(this.napredpanel);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel3.Location = new System.Drawing.Point(258, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(579, 504);
             this.panel3.TabIndex = 6;
             // 
-            // panel4
+            // nazad
             // 
-            this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Location = new System.Drawing.Point(240, -1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(608, 530);
-            this.panel4.TabIndex = 4;
+            this.nazad.BackColor = System.Drawing.Color.SkyBlue;
+            this.nazad.Location = new System.Drawing.Point(273, 443);
+            this.nazad.Name = "nazad";
+            this.nazad.Size = new System.Drawing.Size(99, 30);
+            this.nazad.TabIndex = 7;
+            this.nazad.Text = "Nazad";
+            this.nazad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // desno
+            // nazadpanel
             // 
-            this.desno.BackColor = System.Drawing.Color.SkyBlue;
-            this.desno.Location = new System.Drawing.Point(453, 249);
-            this.desno.Name = "desno";
-            this.desno.Size = new System.Drawing.Size(99, 30);
-            this.desno.TabIndex = 4;
-            this.desno.Text = "Desno";
-            this.desno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nazadpanel.BackColor = System.Drawing.Color.Red;
+            this.nazadpanel.Location = new System.Drawing.Point(247, 392);
+            this.nazadpanel.Name = "nazadpanel";
+            this.nazadpanel.Size = new System.Drawing.Size(150, 113);
+            this.nazadpanel.TabIndex = 11;
             // 
             // lijevo
             // 
@@ -183,25 +192,69 @@
             this.lijevo.Text = "Lijevo";
             this.lijevo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // napred
+            // lijevopanel
             // 
-            this.napred.BackColor = System.Drawing.Color.SkyBlue;
-            this.napred.Location = new System.Drawing.Point(273, 43);
-            this.napred.Name = "napred";
-            this.napred.Size = new System.Drawing.Size(99, 30);
-            this.napred.TabIndex = 6;
-            this.napred.Text = "Napred";
-            this.napred.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lijevopanel.BackColor = System.Drawing.Color.Red;
+            this.lijevopanel.Location = new System.Drawing.Point(0, 0);
+            this.lijevopanel.Name = "lijevopanel";
+            this.lijevopanel.Size = new System.Drawing.Size(252, 505);
+            this.lijevopanel.TabIndex = 10;
             // 
-            // nazad
+            // desno
             // 
-            this.nazad.BackColor = System.Drawing.Color.SkyBlue;
-            this.nazad.Location = new System.Drawing.Point(273, 443);
-            this.nazad.Name = "nazad";
-            this.nazad.Size = new System.Drawing.Size(99, 30);
-            this.nazad.TabIndex = 7;
-            this.nazad.Text = "Nazad";
-            this.nazad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.desno.BackColor = System.Drawing.Color.SkyBlue;
+            this.desno.Location = new System.Drawing.Point(453, 249);
+            this.desno.Name = "desno";
+            this.desno.Size = new System.Drawing.Size(99, 30);
+            this.desno.TabIndex = 4;
+            this.desno.Text = "Desno";
+            this.desno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // desnopanel
+            // 
+            this.desnopanel.BackColor = System.Drawing.Color.Red;
+            this.desnopanel.Location = new System.Drawing.Point(396, 0);
+            this.desnopanel.Name = "desnopanel";
+            this.desnopanel.Size = new System.Drawing.Size(183, 504);
+            this.desnopanel.TabIndex = 9;
+            // 
+            // napredpanel
+            // 
+            this.napredpanel.BackColor = System.Drawing.Color.Red;
+            this.napredpanel.Controls.Add(this.button2);
+            this.napredpanel.Controls.Add(this.uuu);
+            this.napredpanel.Location = new System.Drawing.Point(247, 0);
+            this.napredpanel.Name = "napredpanel";
+            this.napredpanel.Size = new System.Drawing.Size(149, 122);
+            this.napredpanel.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(240, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(608, 530);
+            this.panel4.TabIndex = 4;
+            // 
+            // uuu
+            // 
+            this.uuu.BackColor = System.Drawing.Color.SkyBlue;
+            this.uuu.Location = new System.Drawing.Point(26, 56);
+            this.uuu.Name = "uuu";
+            this.uuu.Size = new System.Drawing.Size(99, 30);
+            this.uuu.TabIndex = 0;
+            this.uuu.Text = "Napred";
+            this.uuu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SkyBlue;
+            this.button2.Location = new System.Drawing.Point(26, 92);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Napred";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // mis
             // 
@@ -223,6 +276,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.napredpanel.ResumeLayout(false);
+            this.napredpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -242,6 +297,11 @@
         private System.Windows.Forms.TextBox desno;
         private System.Windows.Forms.TextBox lijevo;
         private System.Windows.Forms.TextBox nazad;
-        private System.Windows.Forms.TextBox napred;
+        private System.Windows.Forms.Panel napredpanel;
+        private System.Windows.Forms.Panel desnopanel;
+        private System.Windows.Forms.Panel lijevopanel;
+        private System.Windows.Forms.Panel nazadpanel;
+        private System.Windows.Forms.TextBox uuu;
+        private System.Windows.Forms.Button button2;
     }
 }
