@@ -55,6 +55,7 @@ namespace RoboticParkingSystem
             }
             else
             {
+               
                 //poruka
             }
             lijevodugme = this.lijevo;

@@ -48,7 +48,7 @@ namespace RoboticParkingSystem
             DialogResult result =  System.Windows.Forms.MessageBox.Show("Postavite kažiprst na senzor!");
             if (result == DialogResult.OK)
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(RoboticParkingSystem.Properties.Resources.fp3);
+                pictureBox1.Image = new System.Drawing.Bitmap(RoboticParkingSystem.Properties.Resources.fp1);
             }
         }
 

@@ -136,6 +136,12 @@
     <Compile Include="korisnik.Designer.cs">
       <DependentUpon>korisnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="mis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mis.Designer.cs">
+      <DependentUpon>mis.cs</DependentUpon>
+    </Compile>
     <Compile Include="parkiranje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="korisnik.resx">
       <DependentUpon>korisnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mis.resx">
+      <DependentUpon>mis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="parkiranje.resx">
       <DependentUpon>parkiranje.cs</DependentUpon>
@@ -300,6 +309,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\ikona1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
