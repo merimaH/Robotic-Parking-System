@@ -13,6 +13,10 @@ namespace RoboticParkingSystem
     public partial class mis : Form { 
 
         PictureBox auto = new PictureBox();
+        TextBox zid1 = new TextBox();
+       
+
+
         TextBox kraj = new TextBox();
         Button lijevodugme = new Button();
         Button desnodugme = new Button();
@@ -33,7 +37,9 @@ namespace RoboticParkingSystem
 
         Panel nazad2 = new Panel();
 
-        Button napred4 = new Button();
+
+
+        Panel zeleno = new Panel();
     
         public mis()
         {
@@ -68,9 +74,13 @@ namespace RoboticParkingSystem
             nazad2 = this.nazadpanel;
             nazad2.Visible = true;
 
-            napred4 = this.button2;
-            napred4.Visible = true;
+            zeleno = this.signalizacija;
+            zid1 = this.zid;
+            zid1.Visible = false;
+            
 
+
+            
         }
       
 
@@ -111,11 +121,13 @@ namespace RoboticParkingSystem
                 if (auto.Location.X > 287)
                 {
                     lijevo1.Visible = true;
+                   
                     desno2.Visible = true;
                 }
                 else
                 {
                     lijevo1.Visible = false;
+                   
                     desno2.Visible = false;
                 }
 
@@ -135,13 +147,13 @@ namespace RoboticParkingSystem
                 {
                     napred3.Visible = true;
                     nazad2.Visible = true;
-                    napred4.Visible = true;
+                   
                 }
                 else
                 {
                     napred3.Visible = false;
                     nazad2.Visible = false;
-                    napred4.Visible = false;
+                    
                 }
 
                 if (auto.Location.X > 250 && auto.Location.X < 287 && auto.Location.Y > 122 && auto.Location.Y < 180)
@@ -149,16 +161,32 @@ namespace RoboticParkingSystem
                     kraj.Visible = true;
                     poruka.Visible = true;
                     upute.Visible = false;
+                    zeleno.BackColor = Color.MediumSpringGreen;
                 }
                 else
                 {
                     kraj.Visible = false;
                     poruka.Visible = false;
                     upute.Visible = true;
+                    zeleno.BackColor = Color.SlateGray;
                 }
                 //Nova pozovija kursora
-                moveObj1.Top += e.Y-y;
-                moveObj1.Left += e.X - x;
+                if (auto.Location.X > 0 && auto.Location.X < 480 && auto.Location.Y > 0 && auto.Location.Y < 300)
+                {
+                    //upute.Visible = true;
+                    zid1.Visible = false;
+                    moveObj1.Top += e.Y - y;
+                    moveObj1.Left += e.X - x;
+                }
+                else
+                {
+                    moveObj1.Top = 50;
+                    moveObj1.Left = 50;
+                    upute.Visible = false;
+                    zid1.Visible = true;
+                   
+
+                }
 
             }
         }

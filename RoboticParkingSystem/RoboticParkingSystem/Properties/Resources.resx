@@ -121,31 +121,46 @@
   <data name="ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ikona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fp1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="printIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fp2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="newuser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newuser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strelica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strelica1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ikona_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ikona_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\auto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="auto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\auto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\auto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fp1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strelica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strelica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strelica11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strelica11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="auto11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\auto11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="printIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slika2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\slika2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fp2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strelica2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strelica2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

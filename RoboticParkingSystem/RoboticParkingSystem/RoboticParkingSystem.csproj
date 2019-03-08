@@ -309,6 +309,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\strelica2.png" />
+    <None Include="Resources\strelica11.png" />
+    <None Include="Resources\slika2.png" />
+    <None Include="Resources\strelica1.png" />
+    <None Include="Resources\strelica.png" />
     <None Include="Resources\printIcon2.png" />
     <None Include="Resources\printIcon.png" />
     <None Include="Resources\ikona1.png" />
