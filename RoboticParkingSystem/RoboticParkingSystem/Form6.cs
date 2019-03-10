@@ -14,6 +14,8 @@ namespace RoboticParkingSystem
 {
     public partial class Form6 : Form
     {
+        Color svijetloZelena = Color.FromArgb(16, 172, 132);
+        Color tamnoZelena = Color.FromArgb(11, 111, 86);
         private System.Drawing.Printing.PrintDocument document = new System.Drawing.Printing.PrintDocument();
         public Form6()
         {
@@ -88,6 +90,33 @@ namespace RoboticParkingSystem
             button4.BackColor = Color.FromArgb(16, 172, 132);
             splitter1.BackColor = Color.FromArgb(16, 172, 132);
             pictureBox1.BackColor = Color.FromArgb(16, 172, 132);
+            panel3.Visible = true;
+            panel1.Visible = false;
+
+            DataTable dt = new DataTable("Alarmi");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                //nesto ne valja sa ovom naredbom
+                string sqlNaredba = "select TekstAlarma as 'Tekst alarma',VrijemeAlarma as 'Vrijeme alarma', Prioritet,Obradjen from Alarmi ";
+                string sqlNaredba2 = ";";
+   
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView2.DataSource = dt;
+
+                }
+            }
+            /*foreach (var item in dataGridView2.c)
+            {
+
+            }*/
+
 
 
 
@@ -113,6 +142,7 @@ namespace RoboticParkingSystem
 
 
             panel1.Visible = false;
+            panel3.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -140,7 +170,7 @@ namespace RoboticParkingSystem
             splitter1.BackColor = Color.FromArgb(72, 126, 176);
             pictureBox1.BackColor = Color.FromArgb(72, 126, 176);
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
+            panel3.Visible = false;
 
         }
 
@@ -232,6 +262,66 @@ namespace RoboticParkingSystem
             this.dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
             e.Graphics.DrawImage(bm, 0, 0);
     
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            label5.ForeColor = svijetloZelena;
+            label6.ForeColor = tamnoZelena;
+            label7.ForeColor = tamnoZelena;
+            label8.ForeColor = tamnoZelena;
+            DataTable dt = new DataTable("Alarmi");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                //nesto ne valja sa ovom naredbom
+                string sqlNaredba = "select TekstAlarma as 'Tekst alarma',VrijemeAlarma as 'Vrijeme alarma',Obradjen from Alarmi ";
+                string sqlNaredba2 = "where Prioritet = 1;";
+               
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba+sqlNaredba2, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView2.DataSource = dt;
+
+                }
+            }
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable("Alarmi");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                //nesto ne valja sa ovom naredbom
+                string sqlNaredba = "select TekstAlarma as 'Tekst alarma',VrijemeAlarma as 'Vrijeme alarma',Obradjen from Alarmi ";
+                string sqlNaredba2 = ";";
+
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView2.DataSource = dt;
+
+                }
+            }
+            label5.ForeColor = tamnoZelena;
+            label6.ForeColor = tamnoZelena;
+            label7.ForeColor = tamnoZelena;
+            label8.ForeColor = svijetloZelena;
         }
     }
 }
