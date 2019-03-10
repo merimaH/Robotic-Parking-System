@@ -63,6 +63,26 @@ namespace RoboticParkingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _30_Car_top_512 {
+            get {
+                object obj = ResourceManager.GetObject("30_Car_top-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8aUPov {
+            get {
+                object obj = ResourceManager.GetObject("8aUPov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap auto {
             get {
                 object obj = ResourceManager.GetObject("auto", resourceCulture);
@@ -93,6 +113,26 @@ namespace RoboticParkingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car_top_view_png_5 {
+            get {
+                object obj = ResourceManager.GetObject("car-top-view-png-5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_mark_2180770_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("check-mark-2180770_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fp1 {
             get {
                 object obj = ResourceManager.GetObject("fp1", resourceCulture);
@@ -106,6 +146,16 @@ namespace RoboticParkingSystem.Properties {
         internal static System.Drawing.Bitmap fp2 {
             get {
                 object obj = ResourceManager.GetObject("fp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gif {
+            get {
+                object obj = ResourceManager.GetObject("gif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

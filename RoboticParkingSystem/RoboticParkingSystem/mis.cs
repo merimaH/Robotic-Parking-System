@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace RoboticParkingSystem
 {
-    public partial class mis : Form { 
+    public partial class mis : Form {
 
+        bool crvena = false;
         PictureBox auto = new PictureBox();
         TextBox zid1 = new TextBox();
        
@@ -21,29 +22,68 @@ namespace RoboticParkingSystem
         Button lijevodugme = new Button();
         Button desnodugme = new Button();
         Button poruka = new Button();
-        TextBox upute = new TextBox();
 
+        TextBox upute = new TextBox();
         TextBox desno1 = new TextBox();
         TextBox lijevo1 = new TextBox();
-
         TextBox napred3 = new TextBox();
         TextBox nazad1 = new TextBox();
 
         Panel napred2 = new Panel();
-
         Panel desno2 = new Panel();
-
         Panel lijevo2 = new Panel();
-
         Panel nazad2 = new Panel();
-
-
+        
+        
 
         Panel zeleno = new Panel();
-    
+        bool blinkLeft = false;
+        bool blinkRight = false;
+        bool blinkUp = false;
+        bool blinkDown = false;
+        bool postaloFalse = true;
+
+        private async void BlinkLeft()
+        {
+            while (true)
+            {
+                await Task.Delay(500);
+                if (blinkLeft)
+                    lijevopanel.BackColor = lijevopanel.BackColor == Color.Red ? Color.Transparent : Color.Red;
+                else
+                {
+                    lijevopanel.BackColor = Color.Transparent;
+                }
+                if (blinkRight)
+                    desnopanel.BackColor = desnopanel.BackColor == Color.Red ? Color.Transparent : Color.Red;
+                else
+                {
+                    desnopanel.BackColor = Color.Transparent;
+                }
+                if (blinkUp)
+                    napredpanel.BackColor = napredpanel.BackColor == Color.Red ? Color.Transparent : Color.Red;
+                else
+                {
+                    napredpanel.BackColor = Color.Transparent;
+                }
+                if (blinkDown)
+                    nazadpanel.BackColor = nazadpanel.BackColor == Color.Red ? Color.Transparent : Color.Red;
+                else
+                {
+                    nazadpanel.BackColor = Color.Transparent;
+                }
+                await Task.Delay(500);
+                
+            }
+        }
         public mis()
         {
             InitializeComponent();
+            BlinkLeft();
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.UpdateStyles();
+            this.moveObj1.BackColor = Color.Transparent;
+
             kraj = this.textBox1;
             kraj.Visible = false;
             poruka = this.button1;
@@ -63,16 +103,18 @@ namespace RoboticParkingSystem
             nazad1.Visible = false;
 
             napred2 = this.napredpanel;
-            napred2.Visible = false;
+            napred2.Visible = true;
 
             desno2 = this.desnopanel;
-            desno2.Visible = false;
+            desno2.Visible = true;
 
             lijevo2 = this.lijevopanel;
             lijevo2.Visible = true;
+            blinkLeft = true;
 
             nazad2 = this.nazadpanel;
             nazad2.Visible = true;
+            blinkDown = true;
 
             zeleno = this.signalizacija;
             zid1 = this.zid;
@@ -109,59 +151,80 @@ namespace RoboticParkingSystem
 
                 if(auto.Location.X<250)
                 {
+                    blinkLeft = true;
+                        
                     desno1.Visible = true;
-                    lijevo2.Visible = true;
+                    //lijevo2.Visible = true;
+                    
                 }
                 else
                 {
                     desno1.Visible = false;
-                    lijevo2.Visible = false;
+                    //lijevo2.Visible = false;
+                    blinkLeft = false;
                 }
 
                 if (auto.Location.X > 287)
                 {
                     lijevo1.Visible = true;
                    
-                    desno2.Visible = true;
+                    //desno2.Visible = true;
+                    blinkRight = true;
                 }
                 else
                 {
                     lijevo1.Visible = false;
                    
-                    desno2.Visible = false;
+                    //desno2.Visible = false;
+                    blinkRight = false;
                 }
 
 
                 if (auto.Location.Y < 122)
                 {
                     nazad1.Visible = true;
-                    napred2.Visible = true;
+                    //napred2.Visible = true;
+                    blinkUp = true;
                 }
                 else
                 {
                     nazad1.Visible = false;
-                    napred2.Visible = false;
+                    //napred2.Visible = false;
+                    blinkUp = false;
                 }
 
                 if (auto.Location.Y > 180)
                 {
                     napred3.Visible = true;
-                    nazad2.Visible = true;
+                    //nazad2.Visible = true;
+                    blinkDown = true;
                    
                 }
                 else
                 {
                     napred3.Visible = false;
-                    nazad2.Visible = false;
+                    //nazad2.Visible = false;
+                    blinkDown = false;
                     
                 }
 
                 if (auto.Location.X > 250 && auto.Location.X < 287 && auto.Location.Y > 122 && auto.Location.Y < 180)
                 {
                     kraj.Visible = true;
-                    poruka.Visible = true;
+                    //poruka.Visible = true;
                     upute.Visible = false;
-                    zeleno.BackColor = Color.MediumSpringGreen;
+                    zeleno.BackColor = Color.FromArgb(120, 179, 72);
+                    timer1.Enabled = true;
+                    timer1.Start();
+                    panel5.Visible = true;
+                    desno.Visible = false;
+                    uuu.Visible = false;
+                    lijevo.Visible = false;
+                    nazad.Visible = false;
+                    poruka.Visible = true;
+
+                    pictureBox2.Visible = true;
+                    
                 }
                 else
                 {
@@ -205,6 +268,32 @@ namespace RoboticParkingSystem
         }
 
         private void napred_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lijevopanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mis_Load(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+            panel5.Visible = false;
+            textBox2.Select(0, 0);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureBox2.Image = new Bitmap(RoboticParkingSystem.Properties.Resources.gif);
+            desno.Visible = false;
+            uuu.Visible = false;
+            lijevo.Visible = false;
+            nazad.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
