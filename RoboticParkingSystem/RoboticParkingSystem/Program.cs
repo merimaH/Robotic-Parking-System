@@ -35,7 +35,7 @@ namespace RoboticParkingSystem
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mis());
+            Application.Run(new Form1());
         }
     }
 }

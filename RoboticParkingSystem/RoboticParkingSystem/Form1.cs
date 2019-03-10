@@ -16,6 +16,8 @@ namespace RoboticParkingSystem
         string passwordSup = "supervizor";
         string usernameVlasnik = "vlasnik";
         string passwordVlasnik = "vlasnik";
+        string unKorisnik = "korisnik";
+        string pwKorisnik = "korisnik";
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace RoboticParkingSystem
         private void login_Click(object sender, EventArgs e)
         {
             // ako je supervizor
-            if ((nametxt.Text!=usernameSup || lozinkatxt.Text != passwordSup)&&(nametxt.Text != usernameVlasnik || lozinkatxt.Text!= passwordVlasnik))
+            if ((nametxt.Text!=usernameSup || lozinkatxt.Text != passwordSup)&&(nametxt.Text != usernameVlasnik || lozinkatxt.Text!= passwordVlasnik)&& (nametxt.Text != unKorisnik || lozinkatxt.Text != pwKorisnik))
             {
                 errorProvider1.SetError(nametxt, "Netačni podaci");
                 errorProvider1.SetError(lozinkatxt, "Netačni podaci");
@@ -47,6 +49,11 @@ namespace RoboticParkingSystem
                 new Form4().Show(); //ako je supervizor otvara njegovu formu
                 this.Hide();
 
+            }
+            else if (nametxt.Text == unKorisnik)
+            {
+                new mis().Show();
+                this.Hide();
             }
             else
             {
@@ -85,13 +92,59 @@ namespace RoboticParkingSystem
         {
             // za provjeru jel pritisnut enter 
             if (e.KeyCode == Keys.Enter)
-                login_Click(this, e);
+                login_Click_1(this, e);
                 
         }
 
         private void lozinkatxt_Enter(object sender, EventArgs e)
         {
             lozinkatxt.SelectAll();
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            lozinkatxt.PasswordChar = '\0';
+
+
+        }
+
+        private void lozinkatxt_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            lozinkatxt.PasswordChar = '*';
+        }
+
+        private void login_Click_1(object sender, EventArgs e)
+        {
+            // ako je supervizor
+            if ((nametxt.Text != usernameSup || lozinkatxt.Text != passwordSup) && (nametxt.Text != usernameVlasnik || lozinkatxt.Text != passwordVlasnik) && (nametxt.Text != unKorisnik || lozinkatxt.Text != pwKorisnik))
+            {
+                errorProvider1.SetError(nametxt, "Netačni podaci");
+                errorProvider1.SetError(lozinkatxt, "Netačni podaci");
+                //nametxt.Focus();
+                nametxt.Select(); // selektuje tekst da se lakse promijeni posto je pogresan
+                nametxt.SelectAll();
+            }
+            else if (nametxt.Text == usernameSup)
+            {
+                new Form4().Show(); //ako je supervizor otvara njegovu formu
+                this.Hide();
+
+            }
+            else if (nametxt.Text == unKorisnik)
+            {
+                new mis().Show();
+                this.Hide();
+            }
+            else
+            {
+                new Form6().Show(); // ako je vlasnik otvara njegovu
+                this.Hide();
+            }
         }
     }
 }

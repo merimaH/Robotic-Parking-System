@@ -73,7 +73,7 @@ namespace RoboticParkingSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(72, 126, 176);
+            button1.BackColor = Color.FromArgb(16, 172, 132);
             button1.ForeColor = SystemColors.ControlLightLight;
             button1.Font = new Font("MS Sans Serif", 12);
 
@@ -81,27 +81,36 @@ namespace RoboticParkingSystem
             button2.ForeColor = SystemColors.ControlText;
             button2.Font = new Font("MS Sans Serif", 13);
 
-            button3.BackColor = Color.FromArgb(72, 126, 176);
+            button3.BackColor = Color.FromArgb(16, 172, 132);
             button3.ForeColor = SystemColors.ControlLightLight;
             button3.Font = new Font("MS Sans Serif", 12);
+
+            button4.BackColor = Color.FromArgb(16, 172, 132);
+            splitter1.BackColor = Color.FromArgb(16, 172, 132);
+            pictureBox1.BackColor = Color.FromArgb(16, 172, 132);
+
 
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(72, 126, 176);
+            button1.BackColor = Color.FromArgb(255, 159, 67);
             button1.ForeColor = SystemColors.ControlLightLight;
 
             button3.BackColor = SystemColors.Control;
             button3.ForeColor = SystemColors.ControlText;
 
-            button2.BackColor = Color.FromArgb(72, 126, 176);
+            button2.BackColor = Color.FromArgb(255, 159, 67);
             button2.ForeColor = SystemColors.ControlLightLight;
 
             button1.Font = new Font("MS Sans Serif", 12);
             button2.Font = new Font("MS Sans Serif", 12);
             button3.Font = new Font("MS Sans Serif", 13);
+            button4.BackColor = Color.FromArgb(255, 159, 67);
+            splitter1.BackColor = Color.FromArgb(255, 159, 67);
+            pictureBox1.BackColor = Color.FromArgb(255, 159, 67);
+
 
             panel1.Visible = false;
         }
@@ -126,6 +135,10 @@ namespace RoboticParkingSystem
             DataGridViewRow row2 = dataGridView1.Rows[1];
             row1.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);
             row2.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);
+
+            button4.BackColor = Color.FromArgb(72, 126, 176);
+            splitter1.BackColor = Color.FromArgb(72, 126, 176);
+            pictureBox1.BackColor = Color.FromArgb(72, 126, 176);
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
 

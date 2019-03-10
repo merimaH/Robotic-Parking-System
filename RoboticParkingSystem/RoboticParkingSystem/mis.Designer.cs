@@ -41,7 +41,6 @@ namespace RoboticParkingSystem
             this.panel4 = new System.Windows.Forms.Panel();
             this.signalizacija = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lijevopanel = new System.Windows.Forms.Panel();
             this.desnopanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,16 +50,18 @@ namespace RoboticParkingSystem
             this.lijevo = new System.Windows.Forms.TextBox();
             this.desno = new System.Windows.Forms.TextBox();
             this.nazad = new System.Windows.Forms.TextBox();
-            this.moveObj1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.moveObj1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -81,7 +82,7 @@ namespace RoboticParkingSystem
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(179)))), ((int)(((byte)(72)))));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(1, 192);
+            this.textBox1.Location = new System.Drawing.Point(4, 140);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -93,6 +94,7 @@ namespace RoboticParkingSystem
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.zid);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label1);
@@ -106,7 +108,7 @@ namespace RoboticParkingSystem
             // 
             this.zid.BackColor = System.Drawing.Color.Red;
             this.zid.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.zid.Location = new System.Drawing.Point(1, 218);
+            this.zid.Location = new System.Drawing.Point(5, 170);
             this.zid.Name = "zid";
             this.zid.Size = new System.Drawing.Size(204, 27);
             this.zid.TabIndex = 0;
@@ -119,7 +121,7 @@ namespace RoboticParkingSystem
             this.textBox2.BackColor = System.Drawing.Color.LightGray;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(13, 112);
+            this.textBox2.Location = new System.Drawing.Point(13, 65);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(186, 73);
@@ -131,7 +133,7 @@ namespace RoboticParkingSystem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 59);
+            this.label1.Location = new System.Drawing.Point(8, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 50);
             this.label1.TabIndex = 3;
@@ -158,17 +160,6 @@ namespace RoboticParkingSystem
             // 
             this.timer1.Interval = 1880;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox1.Image = global::RoboticParkingSystem.Properties.Resources.ikona;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // lijevopanel
             // 
@@ -255,35 +246,6 @@ namespace RoboticParkingSystem
             this.nazad.Text = "Nazad";
             this.nazad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // moveObj1
-            // 
-            this.moveObj1.BackColor = System.Drawing.Color.Transparent;
-            this.moveObj1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.moveObj1.Image = global::RoboticParkingSystem.Properties.Resources.car_top_view_png_5;
-            this.moveObj1.Location = new System.Drawing.Point(168, 218);
-            this.moveObj1.Margin = new System.Windows.Forms.Padding(4);
-            this.moveObj1.Name = "moveObj1";
-            this.moveObj1.Size = new System.Drawing.Size(102, 219);
-            this.moveObj1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.moveObj1.TabIndex = 0;
-            this.moveObj1.TabStop = false;
-            this.moveObj1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.moveObj1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseDown);
-            this.moveObj1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseMove);
-            this.moveObj1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseUp);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = global::RoboticParkingSystem.Properties.Resources._8aUPov;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(293, 269);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -313,6 +275,59 @@ namespace RoboticParkingSystem
             this.panel5.Size = new System.Drawing.Size(296, 297);
             this.panel5.TabIndex = 13;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(70, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 31);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Nazad";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox1.Image = global::RoboticParkingSystem.Properties.Resources.ikona;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = global::RoboticParkingSystem.Properties.Resources._8aUPov;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(293, 269);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // moveObj1
+            // 
+            this.moveObj1.BackColor = System.Drawing.Color.Transparent;
+            this.moveObj1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.moveObj1.Image = global::RoboticParkingSystem.Properties.Resources.car_top_view_png_5;
+            this.moveObj1.Location = new System.Drawing.Point(168, 218);
+            this.moveObj1.Margin = new System.Windows.Forms.Padding(4);
+            this.moveObj1.Name = "moveObj1";
+            this.moveObj1.Size = new System.Drawing.Size(102, 219);
+            this.moveObj1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.moveObj1.TabIndex = 0;
+            this.moveObj1.TabStop = false;
+            this.moveObj1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.moveObj1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseDown);
+            this.moveObj1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseMove);
+            this.moveObj1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveObj1_MouseUp);
+            // 
             // mis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,12 +346,12 @@ namespace RoboticParkingSystem
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.mis_Paint);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveObj1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +380,6 @@ namespace RoboticParkingSystem
         private Panel panel3;
         private Panel panel5;
         private TextBox textBox1;
+        private Button button2;
     }
 }
