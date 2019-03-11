@@ -49,6 +49,8 @@ namespace RoboticParkingSystem
             button1.ForeColor = SystemColors.ControlText;
             button1.Font = new Font("MS Sans Serif", 13);
             panel1.Visible = true;
+            panel3.Visible = false;
+            panel4.Visible = false;
             DataGridViewRow row1 = dataGridView1.Rows[0];
             DataGridViewRow row2 = dataGridView1.Rows[1];
             row1.DefaultCellStyle.BackColor = Color.FromArgb(198, 216, 232);
@@ -63,6 +65,13 @@ namespace RoboticParkingSystem
             toolTip1.SetToolTip(label3, "Prikaz svih korisnika.");
             toolTip1.SetToolTip(pictureBox2, "Novi korisnici.");
             toolTip1.SetToolTip(pictureBox3, "Novi korisnici.");
+            toolTip1.SetToolTip(button7, "Pritanje PDF dokumenta izvještaja uplata.");
+            toolTip1.SetToolTip(button6, "Printanje PDF dokumenta izvještaja alarma.");
+            toolTip1.SetToolTip(label8, "Prikaz svih alarma.");
+            toolTip1.SetToolTip(label5, "Prikaz alarma s prioritetom 1");
+            toolTip1.SetToolTip(label6, "Prikaz alarma s prioritetom 2");
+            toolTip1.SetToolTip(label7, "Prikaz alarma s prioritetom 3");
+            toolTip1.SetToolTip(button8, "Pomoć");
             
 
 
@@ -90,7 +99,9 @@ namespace RoboticParkingSystem
             button4.BackColor = Color.FromArgb(16, 172, 132);
             splitter1.BackColor = Color.FromArgb(16, 172, 132);
             pictureBox1.BackColor = Color.FromArgb(16, 172, 132);
+            button8.BackColor = Color.FromArgb(16, 172, 132);
             panel3.Visible = true;
+            panel4.Visible = false;
             panel1.Visible = false;
 
             DataTable dt = new DataTable("Alarmi");
@@ -151,10 +162,33 @@ namespace RoboticParkingSystem
             button4.BackColor = Color.FromArgb(255, 159, 67);
             splitter1.BackColor = Color.FromArgb(255, 159, 67);
             pictureBox1.BackColor = Color.FromArgb(255, 159, 67);
+            button8.BackColor = Color.FromArgb(255, 159, 67);
+            DataTable dt = new DataTable("Uplate");
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoboticParkingSystem.Properties.Settings.Database2ConnectionString"].ConnectionString))
+            {
+                if (cn.State == ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+                
+                string sqlNaredba = "select Klijenti.Ime, Klijenti.Prezime, Uplate.DatumUplate as 'Datum uplate', Uplate.BrojMjeseci as 'Broj mjeseci' from Uplate inner join Klijenti on Uplate.ClientID = Klijenti.ClientID order by DatumUplate DESC";
 
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlNaredba, cn))
+                {
+
+                    da.Fill(dt);
+                    dataGridView3.DataSource = dt;
+
+                }
+            }
+            dataGridView3.Columns[0].Width = 145;
+            dataGridView3.Columns[1].Width = 175;
+            dataGridView3.Columns[2].Width = 200;
+            dataGridView3.Columns[3].Width = 84;
 
             panel1.Visible = false;
             panel3.Visible = false;
+            panel4.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -181,8 +215,10 @@ namespace RoboticParkingSystem
             button4.BackColor = Color.FromArgb(72, 126, 176);
             splitter1.BackColor = Color.FromArgb(72, 126, 176);
             pictureBox1.BackColor = Color.FromArgb(72, 126, 176);
+            button8.BackColor = Color.FromArgb(72, 126, 176);
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             panel3.Visible = false;
+            panel4.Visible = false;
 
             
 
@@ -278,6 +314,9 @@ namespace RoboticParkingSystem
                 this.dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
             else if (panel3.Visible == true)
                 this.dataGridView2.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            else
+                this.dataGridView3.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+
             e.Graphics.DrawImage(bm, 0, 0);
     
         }
@@ -447,11 +486,76 @@ namespace RoboticParkingSystem
             printDocument1.Print();
         }
 
-        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridView3_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridView3.ClearSelection();
+        }
+
+        private void dataGridView2_Sorted(object sender, EventArgs e)
+        {   if (label8.ForeColor == svijetloZelena)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[2].Value) == 1)
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(255, 166, 166);
+                    else if (Convert.ToInt32(row.Cells[2].Value) == 2)
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(255, 206, 157);
+                    else
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 125);
+                }
+            } 
+            else if (label5.ForeColor == svijetloZelena)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 166, 166);
+                   
+                }
+            }
+            else if (label6.ForeColor == svijetloZelena)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 206, 157);
+
+                }
+            }
+            else if (label7.ForeColor == svijetloZelena)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255,255,125);
+
+                }
+            }
+        }
+
+        private void dataGridView2_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Da li ste sigurni da želite promijeniti status alarma?", "Pitanje", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.No)
-                dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToBoolean(dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) ? false : true;
+            {
+                dataGridView2.CancelEdit();
+                //dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToBoolean(dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) ? true : false;
+            }
+            else
+                dataGridView2.EndEdit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
