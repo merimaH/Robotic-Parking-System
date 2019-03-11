@@ -12,7 +12,6 @@ namespace RoboticParkingSystem
 {
     public partial class mis : Form {
 
-        bool crvena = false;
         PictureBox auto = new PictureBox();
         TextBox zid1 = new TextBox();
        
@@ -41,7 +40,6 @@ namespace RoboticParkingSystem
         bool blinkRight = false;
         bool blinkUp = false;
         bool blinkDown = false;
-        bool postaloFalse = true;
 
         private async void BlinkLeft()
         {
